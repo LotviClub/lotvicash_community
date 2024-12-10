@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélectionner un abonnement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Sélectionnez un abonnement</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="subscription_type" class="form-label">Choisir un abonnement</label>
+                <select class="form-select" id="subscription_type" name="subscription_type">
+                    <option value="basic">Abonnement de base - 10 $</option>
+                    <option value="premium">Abonnement premium - 30 $</option>
+                    <option value="vip">Abonnement VIP - 50 $</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

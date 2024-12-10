@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+     <h2 class="text-center">Inscription</h2>
+        <form method="POST" action="/register">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nom complet</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Adresse email</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            {% if sponsor_name %}
+            <div class="mb-3">
+                <label for="sponsor_name" class="form-label">Parrain</label>
+                <input type="text" id="sponsor_name" class="form-control" value="{{ sponsor_name }}" disabled>
+            </div>
+            {% endif %}
+            <input type="hidden" name="sponsor_id" value="{{ sponsor_id }}">
+                       <!-- Le type d'abonnement est caché ici, mais il est envoyé avec le formulaire -->
+            <input type="hidden" name="subscription_type" value="{{ subscription_type }}">
+            
+            <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+        </form>
+</div>
+
+{% endblock %}
+    <!-- Script pour pré-remplir le champ Sponsor ID -->
+    <script>
+        // Obtenir les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sponsorId = urlParams.get('sponsor_id');
+        if (sponsorId) {
+            document.getElementById('sponsor_id').value = sponsorId;
+        }
+    </script>
+
+    <!-- Lien vers Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
